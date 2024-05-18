@@ -1,0 +1,49 @@
+/* 
+body,
+section {
+  background-color: #D9D9D9 !important;
+}
+  
+  .dataChart {
+    background-color: #cacaca;
+    border-radius: 0.5em;
+    box-shadow: rgba(79, 81, 84, 0.2) 0px 8px 24px;
+    padding: 1em;
+    border-radius: 20px;
+  }
+  
+  .OverallUsageChart {
+
+    background-color: #384159;
+  }
+  
+  
+  .SmallChart1 {
+
+    background-color: #FFFFFF;
+  }
+
+  
+  
+  .SmallChart2 {
+ 
+    background-color: #FFFFFF;
+  }
+
+  .PieChart {
+
+    background-color: #FFFFFF;
+  }
+
+ */
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* 
+body {
+  background-color: #c39604;
+} */

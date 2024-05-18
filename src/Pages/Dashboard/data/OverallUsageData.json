@@ -1,0 +1,62 @@
+[
+    {
+      "label": "Jan",
+      "overall": 6485,
+      "cost": 3265
+    },
+    {
+      "label": "Feb",
+      "overall": 5462,
+      "cost": 4239
+    },
+    {
+      "label": "Mar",
+      "overall": 11723,
+      "cost": 5026
+    },
+    {
+      "label": "Apr",
+      "overall": 8283,
+      "cost": 6473
+    },
+    {
+      "label": "May",
+      "overall": 9120,
+      "cost": 4189
+    },
+    {
+      "label": "Jun",
+      "overall": 10360,
+      "cost": 8380
+    },
+    {
+      "label": "Jul",
+      "overall": 9097,
+      "cost": 4477
+    },
+    {
+      "label": "Aug",
+      "overall": 8291,
+      "cost": 3759
+    },
+    {
+      "label": "Sep",
+      "overall": 6240,
+      "cost": 4334
+    },
+    {
+      "label": "Oct",
+      "overall": 8252,
+      "cost": 4532
+    },
+    {
+      "label": "Nov",
+      "overall": 5697,
+      "cost": 4797
+    },
+    {
+      "label": "Dec",
+      "overall": 8743,
+      "cost": 3917
+    }
+  ]
