@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   AreaChart,
   Area,
@@ -21,73 +21,100 @@ const OverallUsageChartComponent = ({
   handleToggleProduct1,
   handleToggleProduct2,
 }) => {
-  const productSales = [
-    // { name: "Jan", product1: 4000, product2: 2400 },
-    // { name: "Feb", product1: 7000, product2: 2210 },
+  // const productSales = [
 
-    {
-      name: "Jan",
-      Active: 4000,
-      Inactive: 2400,
-    },
-    {
-      name: "Feb",
-      Active: 7000,
-      Inactive: 2210,
-    },
-    {
-      name: "Mar",
-      Active: 4000,
-      Inactive: 6290,
-    },
-    {
-      name: "Apr",
-      Active: 4780,
-      Inactive: 2000,
-    },
-    {
-      name: "May",
-      Active: 1890,
-      Inactive: 3181,
-    },
-    {
-      name: "Jun",
-      Active: 6390,
-      Inactive: 2500,
-    },
-    {
-      name: "Jul",
-      Active: 5390,
-      Inactive: 1500,
-    },
-    {
-      name: "Aug",
-      Active: 5090,
-      Inactive: 4610,
-    },
-    {
-      name: "Sep",
-      Active: 4390,
-      Inactive: 2002,
-    },
-    {
-      name: "Oct",
-      Active: 6390,
-      Inactive: 500,
-    },
-    {
-      name: "Nov",
-      Active: 4890,
-      Inactive: 3800,
-    },
-    {
-      name: "Dec",
-      Active: 5890,
-      Inactive: 6500,
-    },
+  //   {
+  //     month: "Jan",
+  //     Active: 4000,
+  //     Inactive: 2400,
+  //   },
+  //   {
+  //     month: "Feb",
+  //     Active: 7000,
+  //     Inactive: 2210,
+  //   },
+  //   {
+  //     month: "Mar",
+  //     Active: 4000,
+  //     Inactive: 6290,
+  //   },
+  //   {
+  //     month: "Apr",
+  //     Active: 4780,
+  //     Inactive: 2000,
+  //   },
+  //   {
+  //     month: "May",
+  //     Active: 1890,
+  //     Inactive: 3181,
+  //   },
+  //   {
+  //     month: "Jun",
+  //     Active: 6390,
+  //     Inactive: 2500,
+  //   },
+  //   {
+  //     month: "Jul",
+  //     Active: 5390,
+  //     Inactive: 1500,
+  //   },
+  //   {
+  //     month: "Aug",
+  //     Active: 5090,
+  //     Inactive: 4610,
+  //   },
+  //   {
+  //     month: "Sep",
+  //     Active: 4390,
+  //     Inactive: 2002,
+  //   },
+  //   {
+  //     month: "Oct",
+  //     Active: 6390,
+  //     Inactive: 500,
+  //   },
+  //   {
+  //     month: "Nov",
+  //     Active: 4890,
+  //     Inactive: 3800,
+  //   },
+  //   {
+  //     month: "Dec",
+  //     Active: 5890,
+  //     Inactive: 6500,
+  //   },
+  // ];
 
-    // Add the rest of your data...
-  ];
+  // State to store fetched data
+  const [productSales, setProductSales] = useState([]);
+
+  // Fetch data from the API
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://66a3830a44aa637045817a39.mockapi.io/mockapi/APItest"
+        );
+        const data = await response.json();
+
+        // Log the data to check its structure
+        console.log("Fetched data:", data);
+
+        // Check if the data needs to be transformed
+        const transformedData = data.map((item) => ({
+          Month: item.Month, // or adjust according to the actual structure
+          Active: item.Active,
+          Inactive: item.Inactive,
+        }));
+
+        setProductSales(transformedData); // Update state with the fetched data
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -114,7 +141,7 @@ const OverallUsageChartComponent = ({
           axisLine={false} // Hide y-axis line
         /> */}
         <XAxis
-          dataKey="name"
+          dataKey="Month"
           tick={{ fill: "#ffffff" }}
           interval="preserveStartEnd" // Keep the first and last labels, hide others as needed
           angle={-45} // Rotate the labels by 45 degrees
