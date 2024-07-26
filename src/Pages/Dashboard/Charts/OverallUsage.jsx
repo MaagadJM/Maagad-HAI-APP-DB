@@ -216,7 +216,8 @@ const CustomTooltip = ({ active, payload, label }) => {
             item.dataKey === "Active" ? "text-yellow-400" : "text-yellow-200"; // Set text color based on dataKey
           return (
             <p key={index} className={`text-sm ${textColorClass}`}>
-              {item.name}: <span className="ml-2">${item.value}</span>
+              {/* {item.name}: <span className="ml-2">${item.value}</span> */}
+              {item.name}: <span className="ml-2">{item.value}</span>
             </p>
           );
         })}

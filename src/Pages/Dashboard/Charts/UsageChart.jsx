@@ -110,7 +110,8 @@ const CustomTooltip = ({ active, payload, label }) => {
         <p className="text-medium text-lg text-white">{label}</p>
         <p className="text-sm text-yellow-400">
           Usages:
-          <span className="ml-2">${payload[0].value}</span>
+          {/* <span className="ml-2">${payload[0].value}</span> */}
+          <span className="ml-2">{payload[0].value}</span>
         </p>
         {/* <p className="text-sm text-indigo-400">
           Product 2:
